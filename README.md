@@ -43,20 +43,26 @@ It's that easy. No generating swf's required and no Flash IDE or Flex Builder re
  </div>
  </div>
 ---
+***WavSound***
+---
 <div>
  <div class="vt" id="wikimaincol">
- <p><a href="/p/as3wavsound/wiki/WavSound">WavSound</a> is the class in the AWS library that encapsulates the playback API just as Adobe's <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/Sound.html" rel="nofollow">Sound</a> class does. It supports all methods the standard Sound class does. On calling <tt>.play()</tt> a <a href="/p/as3wavsound/wiki/WavSoundChannel">WavSoundChannel</a> object is returned for runtime playback operations which has the same API as Adobe's <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/SoundChannel.html" rel="nofollow">SoundChannel</a>. </p><p><a href="/p/as3wavsound/wiki/Documentation">back</a> </p>
+ <p><a href="/p/as3wavsound/wiki/WavSound">WavSound</a> is the class in the AWS library that encapsulates the playback API just as Adobe's <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/Sound.html" rel="nofollow">Sound</a> class does. It supports all methods the standard Sound class does. On calling <tt>.play()</tt> a <a href="/p/as3wavsound/wiki/WavSoundChannel">WavSoundChannel</a> object is returned for runtime playback operations which has the same API as Adobe's <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/SoundChannel.html" rel="nofollow">SoundChannel</a>. </p>
  </div>
  </div>
- ---
+---
+***WavSoundChannel***
+---
  <div>
  <div class="vt" id="wikimaincol">
- <p><a href="/p/as3wavsound/wiki/WavSoundChannel">WavSoundChannel</a> is the class in the AWS library that encapsulates the playback API just as Adobe's <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/SoundChannel.html" rel="nofollow">SoundChannel</a> class does. It supports all methods the standard SoundChannel<a href="/p/as3wavsound/w/edit/SoundChannel">?</a> class does. </p><p><a href="/p/as3wavsound/wiki/Documentation">back</a> </p>
+ <p><a href="/p/as3wavsound/wiki/WavSoundChannel">WavSoundChannel</a> is the class in the AWS library that encapsulates the playback API just as Adobe's <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/media/SoundChannel.html" rel="nofollow">SoundChannel</a> class does. It supports all methods the standard SoundChannel<a href="/p/as3wavsound/w/edit/SoundChannel">?</a> class does. </p>
  </div>
  </div>
- ---
+---
+***SoundChannel Bug***
+---
  <div>
  <div class="vt" id="wikimaincol">
- <h2><a name="Quick_note_on_the_problem"></a>Quick note on the SoundChannel<a href="/p/as3wavsound/w/edit/SoundChannel">?</a> problem<a href="#Quick_note_on_the_problem" class="section_anchor"></a></h2><p>To maintain complete transparent backwards compatibility with the Sound API, AS3WavSound would need to support <i>soundChannel.stop()</i>, which currently is impossible. The reason for this is because SoundChannel<a href="/p/as3wavsound/w/edit/SoundChannel">?</a> has been declared <i>final</i> by Adobe's developers. And so it cannot be subclassed to redefine behavior for stop() to stop playing a <a href="/p/as3wavsound/wiki/WavSoundChannel">WavSoundChannel</a>. No work-around is currently known. </p><p>A solution could be to get support for a SOUND_STOP event alongside the SOUND_COMPLETE event. But alas. </p><h2><a name="current_state"></a>current state<a href="#current_state" class="section_anchor"></a></h2><p>Backwards compatibility has been dropped in favor of a working solution. Instead all Adobe's sound classes have a analog wav counterpart now. </p><ul><li>Sound -&gt; WavSound </li><li>SoundChannel -&gt; WavSoundChannel </li></ul><p>Now wavSoundChannel.stop() works for .wav files. </p><p><a href="/p/as3wavsound/wiki/Documentation">back</a> </p>
+ <h2><a name="Quick_note_on_the_problem"></a>Quick note on the SoundChannel<a href="/p/as3wavsound/w/edit/SoundChannel">?</a> problem<a href="#Quick_note_on_the_problem" class="section_anchor"></a></h2><p>To maintain complete transparent backwards compatibility with the Sound API, AS3WavSound would need to support <i>soundChannel.stop()</i>, which currently is impossible. The reason for this is because SoundChannel<a href="/p/as3wavsound/w/edit/SoundChannel">?</a> has been declared <i>final</i> by Adobe's developers. And so it cannot be subclassed to redefine behavior for stop() to stop playing a <a href="/p/as3wavsound/wiki/WavSoundChannel">WavSoundChannel</a>. No work-around is currently known. </p><p>A solution could be to get support for a SOUND_STOP event alongside the SOUND_COMPLETE event. But alas. </p><h2><a name="current_state"></a>current state<a href="#current_state" class="section_anchor"></a></h2><p>Backwards compatibility has been dropped in favor of a working solution. Instead all Adobe's sound classes have a analog wav counterpart now. </p><ul><li>Sound -&gt; WavSound </li><li>SoundChannel -&gt; WavSoundChannel </li></ul><p>Now wavSoundChannel.stop() works for .wav files. </p><p></p>
  </div>
  </div>
